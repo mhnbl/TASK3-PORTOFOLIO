@@ -1,0 +1,339 @@
+.brnd {
+    font-family: 'Roboto Mono', monospace;
+	font-weight: 700;
+	font-size: 1.5rem;
+	color: white;
+	
+}
+
+.nav-link {
+    color: #b7b7b7;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+    transform: translateY(-5px);
+}
+
+body {
+	background-color: black;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+  }
+  
+  
+.snap-section {
+	height: 100vh;
+	flex-shrink: 0;
+	display: flex;
+	align-items: left;
+	justify-content: left;
+	font-size: 3rem;
+	background-color: #000;
+	color: white;
+	padding-top: 64px; /* make space for navbar */
+	box-sizing: border-box;
+	overflow: visible;  /* Allow content to overflow if necessary */
+
+}
+ul.hero {
+	align-items: left;
+	justify-content: left;
+	list-style-type: none;
+	font-size: 128px;
+	display: flex;        
+	flex-direction: column;
+	justify-content: left;
+	gap: 0px;             
+	padding-left: 50px;
+	line-height: 120px;
+	letter-spacing: 0px;
+
+}
+ul.hero2 {
+	font-size: 64px;
+	display: flex;        
+	flex-direction: column; 
+	justify-content: left;
+	gap: 0px;             
+	line-height: 120px;
+	margin-top: -32px;
+	margin-left: -32px;
+}
+.hero-wrapper {
+	display: flex;
+	gap: 0px; 
+	align-items: flex-start; 
+  }
+
+.brnd-outline {
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 700;
+	color: transparent; 
+	-webkit-text-stroke: 1px white; 
+  }
+
+#about {
+    position: relative;
+    padding-top: 0px; 
+    padding-bottom: 20px; 
+    box-sizing: border-box;
+    height: auto; 
+}
+
+ .content-wrapper {
+    background-image: url("img/BG1.png");
+    background-repeat: repeat; 
+    background-size: auto; 
+    background-position: top left; 
+}
+
+.content-wrapper {
+	position: relative;
+	width: 100%;
+	height: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 3;
+}
+
+.centered-img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px; 
+	height: auto;
+	z-index: 2; 
+	pointer-events: none; 
+	
+}
+
+h1.helo {
+	font-family: 'Roboto Mono', monospace;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 430px;
+	text-align: center;
+	margin: 0;
+	z-index: 1;
+	position: relative;
+	font-weight: 900;
+	padding-bottom: -24px;
+}
+
+.text-container {
+    font-size: 24px;                    
+    width: 800px;                       
+    height: 300px;                       
+    padding: 20px;                      
+    background-color: rgb(0, 0, 0);    
+    border-radius: 10px;                
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);  
+    text-align: left;                   
+    color: white;                       
+    z-index: 4;                         
+    overflow-y: auto;
+    display: flex;                      
+    flex-direction: column;             
+    justify-content: center;            
+    align-items: flex-start;            
+}
+
+#skill{
+	background-image: url("img/BG2.png");
+
+}
+
+.skill-container{
+    width: 800px;   
+	line-height: 100px; 
+	font-weight: 700;                   
+    padding: 20px;                      
+    background-color: rgb(0, 0, 0);    
+    border-radius: 10px;                
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);  
+    text-align: left;                   
+    color: white;                       
+    z-index: 4;                         
+    display: flex;                      
+    flex-direction: column;             
+    justify-content: center;            
+    align-items: center;   
+}
+.skill-container h1{
+	font-weight: 700;
+	color: transparent; 
+	-webkit-text-stroke: 1px white
+}
+
+.cursor-line {
+	position: fixed;
+	width: 2px;
+	height: 2px;
+	background: white;
+	pointer-events: none;
+	z-index: 9999;
+	border-radius: 50%;
+	opacity: 1;
+	animation: fadeLine 0.5s linear forwards;
+  }
+  
+@keyframes fadeLine {
+	to {
+	  opacity: 0;
+	  transform: scale(1.5);
+	}
+  }
+
+#cursorCanvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	z-index: 9999;
+  }
+  
+.skill-container p {
+	display: inline-block;
+	font-size: 148px;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+  }
+  
+.char-wrapper {
+	display: inline-block;
+	height: 1em;
+	overflow: hidden;
+	position: relative;
+  }
+  
+.char-wrapper span {
+	display: block;
+	height: 1em;
+	line-height: 100px;
+	transition: transform 0.4s ease;
+  }
+  
+.char-wrapper span:nth-child(2) {
+	position: absolute;
+	top: 100%;
+	left: 0;
+  }
+  
+.skill-container p:hover .char-wrapper span {
+	transform: translateY(-100%);
+  }
+
+#projects{
+	background-image: url("img/BG3.png");
+}
+
+.projects-container {
+    width: 100%;
+    padding: 20px;
+    color: white;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch; /* Let children fill full width */
+    gap: 0px; /* spacing between items */
+}
+
+.projects-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+
+.projects-container p {
+    display: flex;  /* Use flexbox for easy layout */
+    justify-content: space-between;  /* Space out the items to push them to the far sides */
+    align-items: center;  /* Align text vertically in the center */
+    padding: 16px 24px;
+    border: 2px solid white;
+    font-weight: 700;
+    line-height: 1.6;
+    background-color: transparent;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.projects-container p:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.projects-container p:hover::after {
+    content: "";
+    position: fixed;  /* Use fixed positioning */
+    bottom: 10px;  /* Place it 10px from the bottom */
+    right: 10px;   /* Place it 10px from the right */
+    width: auto;   /* Let the image keep its original width */
+    height: auto;  /* Let the image keep its original height */
+    max-width: 300px;  /* Optionally restrict the max size */
+    max-height: 300px; /* Optionally restrict the max size */
+    background-size: contain;  /* Keep the aspect ratio intact */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.projects-container p::after {
+    content: "";
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background-image: var(--preview-img);  /* Dynamically set the background image */
+}
+
+
+.projects-container p.hovered::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Adjust for the final position */
+}
+
+.preview-image {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    max-width: none;  /* Allow the image to show in its original size */
+    width: auto;
+    height: auto;
+    max-height: 300px;  /* Optionally limit the size */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    opacity: 0;
+    transform: scale(0.8);  /* Start with the image scaled down */
+    transition: opacity 0.5s ease, transform 0.3s ease;  /* Smooth fade and scale transition */
+}
+
+.preview-image.visible {
+    opacity: 1;
+    transform: scale(1);  /* Scale to normal size */
+}

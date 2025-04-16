@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHNBL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css">
+    <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script> 
+
+</head>
+
+<body style="margin: 0; scroll-behavior: smooth;">
+    <header id="mainNavbar" class="w-100 fixed-top" style="height: 64px; background: linear-gradient(to bottom, black, transparent);">
+        <div class="container d-flex justify-content-between align-items-center px-2 h-100">
+          <div class="text-white fs-4 fw-bold">
+          </div>
+          <nav class="mx-auto">
+            <ul class="nav justify-content-center">
+              <li class="nav-item"><a class="nav-link px-3 fw-bold text-white" href="#ab">ABOUT</a></li>
+              <li class="nav-item"><a class="nav-link px-3 fw-bold text-white" href="#skill">SKILLS</a></li>
+              <li class="nav-item"><a class="nav-link px-3 fw-bold text-white" href="#projects">PROJECTS</a></li>
+              <li class="nav-item"><a class="nav-link px-3 fw-bold text-white" href="#contact">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+
+    <canvas id="cursorCanvas"></canvas>
+      
+    <main>
+        <section class="snap-section position-relative" id="home">
+            <div class="hero-wrapper">
+                <ul class="hero brnd-outline">
+                <li>M</li>
+                <li>H</li>
+                <li>N</li>
+                <li>B</li>
+                <li>L</li>
+                </ul>
+                <ul class="hero2 brnd-outline">
+                <li>ム</li>
+                <li>ヒ</li>
+                <li>ナ</li>
+                <li>ビ</li>
+                <li>ル</li>
+                </ul>
+            </div>
+            
+            <div class="position-absolute bottom-0 end-0">
+                <img src="img/BG1-cut.png" alt="" style="width: 800px; height: 300px;">
+            </div>
+        </section>
+
+        <div class="content-wrapper">
+            <img src="img/pfp.png" alt="Image" class="centered-img" id="ab">
+            <h1 class="helo">HELOOO</h1>
+        </div>
+
+        <section class="snap-section" id="about">
+                <div class="text-container">
+                    <p>My name is Nabil, and I’m an Information Systems student with a passion for front-end development and UI/UX design. </p>
+                    <p>I enjoy crafting clean, interactive user experiences and bringing digital ideas to life with purpose and style..</p>
+                </div>
+        </section>
+
+        <section class="snap-section" id="skill">
+            <div class="skill-container">
+                <h1>SKILLS</h1>
+                <p>PYTHON</p>
+                <p>MYSQL</p>
+                <p>JAVA</p>
+                <p>HTML</p>
+            </div>
+        </section>
+
+        <section class="snap-section" id="projects">
+          <div class="projects-container">
+            <h1>PROJECTS</h1>
+            <p class="project-item" data-preview="img/islamic.png">
+                <span class="left-text">ISLAMIC CENTER WEB</span>
+                <span class="right-text">html</span>
+            </p>
+            <p class="project-item" data-preview="img/APOTEK.png">
+                <span class="left-text">PHARMACY DATA MANAGEMENT</span>
+                <span class="right-text">java</span>
+            </p>
+            <p class="project-item" data-preview="img/TIKETKARYA.png">
+                <span class="left-text">TIKETKARYA</span>
+                <span class="right-text">UI/UX design</span>
+            </p>
+          </div>
+        </section>
+        
+
+        <section class="snap-section" id="contact">Contact Section</section>
+    </main>
+
+    <script>
+
+    </script>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
