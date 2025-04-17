@@ -21,12 +21,15 @@ body {
 	background-color: black;
 }
 
+body, * {
+  cursor: none !important;
+}
+
 html, body {
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
   }
-  
   
 .snap-section {
 	height: 100vh;
@@ -37,9 +40,9 @@ html, body {
 	font-size: 3rem;
 	background-color: #000;
 	color: white;
-	padding-top: 64px; /* make space for navbar */
+	padding-top: 64px; 
 	box-sizing: border-box;
-	overflow: visible;  /* Allow content to overflow if necessary */
+	overflow: visible;  
 
 }
 ul.hero {
@@ -85,47 +88,94 @@ ul.hero2 {
     padding-bottom: 20px; 
     box-sizing: border-box;
     height: auto; 
-}
-
- .content-wrapper {
-    background-image: url("img/BG1.png");
-    background-repeat: repeat; 
-    background-size: auto; 
-    background-position: top left; 
+    background-image: url("img/BG2.png");
 }
 
 .content-wrapper {
-	position: relative;
-	width: 100%;
-	height: 60%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 3;
+  background-image: url("img/BG1.png");
+  background-repeat: repeat; 
+  background-size: auto; 
+  background-position: top left; 
+  position: relative;
+  width: 100%;
+  
+  height: auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 40px 20px; 
 }
 
 .centered-img {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 300px; 
-	height: auto;
-	z-index: 2; 
-	pointer-events: none; 
-	
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: auto;
+  z-index: 2; 
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+
 }
 
+.helo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.helo .letter {
+  display: inline-block;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  letter-spacing: -0.05em; 
+
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.6s, opacity 0.6s ease-out;
+
+}
+
+.helo .letter.show {
+  opacity: 1;
+  transform: translateY(0); 
+}
+
+
 h1.helo {
-	font-family: 'Roboto Mono', monospace;
-	color: rgba(255, 255, 255, 0.8);
-	font-size: 430px;
-	text-align: center;
-	margin: 0;
-	z-index: 1;
-	position: relative;
-	font-weight: 900;
-	padding-bottom: -24px;
+  font-family: 'Roboto Mono', monospace;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 430px;
+  text-align: center;
+  margin: 0;
+  z-index: 1;
+  position: relative;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease-out;
+}
+
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.animate-on-scroll:nth-child(2) {
+  transition-delay: 0.6s;
 }
 
 .text-container {
@@ -205,7 +255,7 @@ h1.helo {
 	font-size: 148px;
 	font-weight: bold;
 	color: white;
-	cursor: pointer;
+	cursor:text;
   }
   
 .char-wrapper {
@@ -244,8 +294,8 @@ h1.helo {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch; /* Let children fill full width */
-    gap: 0px; /* spacing between items */
+    align-items: stretch; 
+    gap: 0px; 
 }
 
 .projects-container h1 {
@@ -257,9 +307,9 @@ h1.helo {
 
 
 .projects-container p {
-    display: flex;  /* Use flexbox for easy layout */
-    justify-content: space-between;  /* Space out the items to push them to the far sides */
-    align-items: center;  /* Align text vertically in the center */
+    display: flex;  
+    justify-content: space-between; 
+    align-items: center; 
     padding: 16px 24px;
     border: 2px solid white;
     font-weight: 700;
@@ -268,72 +318,91 @@ h1.helo {
     width: 100%;
     cursor: pointer;
     position: relative;
+    
 }
 
-
-.projects-container p:hover {
-    background-color: white;
-    color: black;
-    border-color: black;
+.project-item {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  color: white;
+  border: 1px solid white;
+  transition: border 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.projects-container p:hover::after {
-    content: "";
-    position: fixed;  /* Use fixed positioning */
-    bottom: 10px;  /* Place it 10px from the bottom */
-    right: 10px;   /* Place it 10px from the right */
-    width: auto;   /* Let the image keep its original width */
-    height: auto;  /* Let the image keep its original height */
-    max-width: 300px;  /* Optionally restrict the max size */
-    max-height: 300px; /* Optionally restrict the max size */
-    background-size: contain;  /* Keep the aspect ratio intact */
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 1;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+.project-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 0;
+  transition: left 0.4s ease;
 }
 
-.projects-container p::after {
-    content: "";
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: auto;
-    height: auto;
-    max-width: 300px;
-    max-height: 300px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    background-image: var(--preview-img);  /* Dynamically set the background image */
+.project-item span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
 }
 
+.project-item:hover::before {
+  left: 0;
+}
 
-.projects-container p.hovered::after {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0); /* Adjust for the final position */
+.project-item:hover {
+  border-color: black;
+}
+
+.project-item:hover span {
+  color: black;
 }
 
 .preview-image {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    max-width: none;  /* Allow the image to show in its original size */
+    max-width: none; 
     width: auto;
     height: auto;
-    max-height: 300px;  /* Optionally limit the size */
+    max-height: 300px; 
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 1000;
     opacity: 0;
-    transform: scale(0.8);  /* Start with the image scaled down */
-    transition: opacity 0.5s ease, transform 0.3s ease;  /* Smooth fade and scale transition */
+    transform: scale(0.8);  
+    transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
 .preview-image.visible {
     opacity: 1;
-    transform: scale(1);  /* Scale to normal size */
+    transform: scale(1); 
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  z-index: 9999;
+}
+
+.custom-cursor.expand {
+  width:30px;
+  height: 30px;
+  background-color: rgba(255, 0, 0, 0.7);
 }

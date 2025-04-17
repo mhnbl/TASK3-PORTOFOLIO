@@ -1,107 +1,123 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MHNBL</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css">
-    <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHNBL</title>
 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- External Styles and Scripts -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css">
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
 </head>
+<body class="bg-black text-white" style="scroll-behavior: smooth;">
 
-<body style="margin: 0; scroll-behavior: smooth;">
-    <header id="mainNavbar" class="w-100 fixed-top" style="height: 64px; background: linear-gradient(to bottom, black, transparent);">
-        <div class="container d-flex justify-content-between align-items-center px-2 h-100">
-          <div class="text-white fs-4 fw-bold">
-          </div>
-          <nav class="mx-auto">
-            <ul class="nav justify-content-center">
-              <li class="nav-item"><a class="nav-link px-3 fw-bold text-white" href="#ab">ABOUT</a></li>
-              <li class="nav-item"><a class="nav-link px-3 fw-bold text-white" href="#skill">SKILLS</a></li>
-              <li class="nav-item"><a class="nav-link px-3 fw-bold text-white" href="#projects">PROJECTS</a></li>
-              <li class="nav-item"><a class="nav-link px-3 fw-bold text-white" href="#contact">CONTACT</a></li>
-            </ul>
-          </nav>
-        </div>
-    </header>
+  <!-- Navbar -->
+  <header id="mainNavbar" class="fixed-top w-100" style="height: 64px; background: linear-gradient(to bottom, black, transparent);">
+    <div class="container d-flex justify-content-between align-items-center h-100 px-2">
+      <div class="text-white fs-4 fw-bold"></div>
+      <nav class="mx-auto">
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link fw-bold text-white px-3" href="#ab">ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold text-white px-3" href="#skill">SKILLS</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold text-white px-3" href="#projects">PROJECTS</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold text-white px-3" href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <canvas id="cursorCanvas"></canvas>
-      
-    <main>
-        <section class="snap-section position-relative" id="home">
-            <div class="hero-wrapper">
-                <ul class="hero brnd-outline">
-                <li>M</li>
-                <li>H</li>
-                <li>N</li>
-                <li>B</li>
-                <li>L</li>
-                </ul>
-                <ul class="hero2 brnd-outline">
-                <li>ム</li>
-                <li>ヒ</li>
-                <li>ナ</li>
-                <li>ビ</li>
-                <li>ル</li>
-                </ul>
-            </div>
-            
-            <div class="position-absolute bottom-0 end-0">
-                <img src="img/BG1-cut.png" alt="" style="width: 800px; height: 300px;">
-            </div>
-        </section>
+  <!-- Cursor and Canvas -->
+  <canvas id="cursorCanvas"></canvas>
+  <div class="custom-cursor"></div>
 
-        <div class="content-wrapper">
-            <img src="img/pfp.png" alt="Image" class="centered-img" id="ab">
-            <h1 class="helo">HELOOO</h1>
-        </div>
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="snap-section position-relative">
+      <div class="hero-wrapper">
+        <ul class="hero brnd-outline">
+          <li>M</li><li>H</li><li>N</li><li>B</li><li>L</li>
+        </ul>
+        <ul class="hero2 brnd-outline">
+          <li>ム</li><li>ヒ</li><li>ナ</li><li>ビ</li><li>ル</li>
+        </ul>
+      </div>
+      <div class="position-absolute bottom-0 end-0">
+        <img src="img/BG1-cut.png" alt="Background" style="width: 800px; height: 300px;">
+      </div>
+    </section>
 
-        <section class="snap-section" id="about">
-                <div class="text-container">
-                    <p>My name is Nabil, and I’m an Information Systems student with a passion for front-end development and UI/UX design. </p>
-                    <p>I enjoy crafting clean, interactive user experiences and bringing digital ideas to life with purpose and style..</p>
-                </div>
-        </section>
+    <!-- Center Hello Section -->
+    <div class="content-wrapper">
+        <img src="img/pfp.png" alt="Image" class="centered-img" id="ab">
+        <h1 class="helo">
+            <span class="letter">H</span>
+            <span class="letter">E</span>
+            <span class="letter">L</span>
+            <span class="letter">L</span>
+            <span class="letter">O</span>
+            <span class="letter">O</span>
 
-        <section class="snap-section" id="skill">
-            <div class="skill-container">
-                <h1>SKILLS</h1>
-                <p>PYTHON</p>
-                <p>MYSQL</p>
-                <p>JAVA</p>
-                <p>HTML</p>
-            </div>
-        </section>
+        </h1>
+    </div>
 
-        <section class="snap-section" id="projects">
-          <div class="projects-container">
-            <h1>PROJECTS</h1>
-            <p class="project-item" data-preview="img/islamic.png">
-                <span class="left-text">ISLAMIC CENTER WEB</span>
-                <span class="right-text">html</span>
-            </p>
-            <p class="project-item" data-preview="img/APOTEK.png">
-                <span class="left-text">PHARMACY DATA MANAGEMENT</span>
-                <span class="right-text">java</span>
-            </p>
-            <p class="project-item" data-preview="img/TIKETKARYA.png">
-                <span class="left-text">TIKETKARYA</span>
-                <span class="right-text">UI/UX design</span>
-            </p>
-          </div>
-        </section>
-        
+    <!-- About Section -->
+    <section id="about" class="snap-section" style="background-image: url('img/BG2.png');">
+      <div class="text-container">
+        <p>My name is Nabil, and I’m an Information Systems student with a passion for front-end development and UI/UX design.</p>
+        <p>I enjoy crafting clean, interactive user experiences and bringing digital ideas to life with purpose and style.</p>
+      </div>
+    </section>
 
-        <section class="snap-section" id="contact">Contact Section</section>
-    </main>
+    <!-- Skills Section -->
+    <section id="skill" class="snap-section" style="background-image: url('img/BG2.png');">
+      <div class="skill-container">
+        <h1>SKILLS</h1>
+        <p>PYTHON</p>
+        <p>MYSQL</p>
+        <p>JAVA</p>
+        <p>HTML</p>
+      </div>
+    </section>
 
-    <script>
+    <!-- Projects Section -->
+    <section id="projects" class="snap-section" style="background-image: url('img/BG3.png');">
+      <div class="projects-container">
+        <h1>PROJECTS</h1>
+        <p class="project-item" data-preview="img/islamic.png">
+          <span class="left-text">ISLAMIC CENTER WEB</span>
+          <span class="right-text">html</span>
+        </p>
+        <p class="project-item" data-preview="img/APOTEK.png">
+          <span class="left-text">PHARMACY DATA MANAGEMENT</span>
+          <span class="right-text">java</span>
+        </p>
+        <p class="project-item" data-preview="img/TIKETKARYA.png">
+          <span class="left-text">TIKETKARYA</span>
+          <span class="right-text">UI/UX design</span>
+        </p>
+      </div>
+    </section>
 
-    </script>
-    <script src="scripts.js"></script>
+    <!-- Contact Section -->
+    <section id="contact" class="snap-section">
+      <div class="container text-center">
+        <h2>Contact</h2>
+      </div>
+    </section>
+  </main>
 
+  <script src="scripts.js"></script>
 </body>
 
 </html>
