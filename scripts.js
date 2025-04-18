@@ -1,3 +1,4 @@
+// Lenis Smooth Scroll Initialization
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
@@ -15,6 +16,7 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+// Canvas Setup and Mouse Trail
 const canvas = document.getElementById("cursorCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -27,33 +29,65 @@ window.addEventListener("resize", () => {
 });
 
 const trail = [];
-const maxTrailLength = 10;
+const maxTrailLength = 30;
+const retractSpeed = 0.1;
+const inactivityThreshold = 50;
+
+let lastMoveTime = Date.now();
 
 document.addEventListener("mousemove", (e) => {
-    trail.push({ x: e.clientX, y: e.clientY });
+    lastMoveTime = Date.now();
+
+    trail.push({ 
+        x: e.clientX, 
+        y: e.clientY,
+        initialX: e.clientX,
+        initialY: e.clientY,
+    });
 
     if (trail.length > maxTrailLength) {
-        trail.shift(); 
+        trail.shift();
     }
 });
+
+function drawSmoothLine(prev, curr, thickness = 2) {
+    const controlPoint1 = {
+        x: prev.x + (curr.x - prev.x) / 3,
+        y: prev.y + (curr.y - prev.y) / 3
+    };
+
+    const controlPoint2 = {
+        x: curr.x - (curr.x - prev.x) / 3,
+        y: curr.y - (curr.y - prev.y) / 3
+    };
+    
+    ctx.beginPath();
+    ctx.moveTo(prev.x, prev.y);
+    ctx.bezierCurveTo(controlPoint1.x, controlPoint1.y, controlPoint2.x, controlPoint2.y, curr.x, curr.y);
+    ctx.strokeStyle = "rgba(255, 0, 0, 1)";
+    ctx.lineWidth = thickness;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+    ctx.stroke();
+}
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    if (trail.length > 1) {
-        for (let i = 1; i < trail.length; i++) {
-            const prev = trail[i - 1];
-            const curr = trail[i];
+    const currentTime = Date.now();
+    const isInactive = currentTime - lastMoveTime > inactivityThreshold;
 
-            ctx.beginPath();
-            ctx.moveTo(prev.x, prev.y);
-            ctx.lineTo(curr.x, curr.y);
+    if (isInactive && trail.length > 0) {
+        trail.shift();
+    }
 
-            const alpha = i / trail.length; 
-            ctx.strokeStyle = `rgba(255, 0, 0, ${alpha})`;
-            ctx.lineWidth = 2;
-            ctx.stroke();
-        }
+    const lineThickness = 1.5;
+
+    for (let i = 1; i < trail.length; i++) {
+        const prev = trail[i - 1];
+        const curr = trail[i];
+
+        drawSmoothLine(prev, curr, lineThickness);
     }
 
     requestAnimationFrame(animate);
@@ -61,6 +95,7 @@ function animate() {
 
 animate();
 
+// Skill Text Animation
 document.querySelectorAll(".skill-container p").forEach(p => {
     const text = p.textContent;
     p.innerHTML = ""; 
@@ -81,6 +116,7 @@ document.querySelectorAll(".skill-container p").forEach(p => {
     }
 });
 
+// Project Item Preview Image
 document.querySelectorAll('.project-item').forEach(item => {
     item.addEventListener('mouseenter', function () {
         const previewImageSrc = this.getAttribute('data-preview');
@@ -106,6 +142,7 @@ document.querySelectorAll('.project-item').forEach(item => {
     });
 });
 
+// GSAP Animations for Scroll and Fade
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.utils.toArray(".helo .letter").forEach((el, i) => {
@@ -137,6 +174,7 @@ gsap.to("#ab", {
     opacity: 1
 });
 
+// Custom Cursor Interaction
 const cursor = document.querySelector(".custom-cursor");
 
 document.addEventListener("mousemove", (e) => {
@@ -148,9 +186,42 @@ const clickableElements = document.querySelectorAll("a, button, .project-item, .
 
 clickableElements.forEach(el => {
     el.addEventListener("mouseenter", () => {
-        cursor.classList.add("expand");
+        if (!el.classList.contains("skill-item")) { 
+            cursor.classList.add("expand");
+        }
     });
+
     el.addEventListener("mouseleave", () => {
         cursor.classList.remove("expand");
     });
+});
+
+// Skill Item Class Assignment
+const skillItems = document.querySelectorAll(".char-wrapper");
+
+skillItems.forEach(item => {
+    item.classList.add("skill-item");
+});
+
+// Scroll Trigger Animations for Snap Sections
+gsap.utils.toArray(".snap-section").forEach(section => {
+  gsap.fromTo(section,
+    {
+      opacity: 0,
+      y: 50
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 80%",
+        end: "bottom top",
+        toggleActions: "play reverse play reverse",
+        markers: false
+      }
+    }
+  );
 });

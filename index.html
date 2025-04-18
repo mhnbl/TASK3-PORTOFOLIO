@@ -17,6 +17,7 @@
   <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
   
 </head>
 <body class="bg-black text-white" style="scroll-behavior: smooth;">
@@ -43,7 +44,7 @@
   <!-- Main Content -->
   <main>
     <!-- Hero Section -->
-    <section id="home" class="snap-section position-relative user-select-none">
+    <section id="top" class="top position-relative user-select-none">
       <div class="hero-wrapper">
         <ul class="hero brnd-outline">
           <li>M</li><li>H</li><li>N</li><li>B</li><li>L</li>
@@ -79,16 +80,31 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skill" class="snap-section user-select-none">
-      <div class="skill-container">
-        <h1>SKILLS</h1>
-        <p>PYTHON</p>
-        <p>MYSQL</p>
-        <p>JAVA</p>
-        <p>HTML</p>
+<!-- Skills Section -->
+<section id="skill" class="snap-section user-select-none">
+  <div class="skill-container">
+    <h1>SKILLS</h1>
+    <div class="d-flex justify-content-center" style="gap: 60px;">
+      <!-- Left Skills -->
+      <div class="d-flex flex-column align-items-center">
+        <p class="python">   PYTHON   </p>
+        <p class="java">   JAVA   </p>
+        <p class="php">   PHP   </p>
+        <p class="figma">   FIGMA   </p>
       </div>
-    </section>
+
+      <!-- Right Skills -->
+      <div class="d-flex flex-column align-items-center ">
+        <p class="mysql">   MYSQL  </p>
+        <p class="html">   HTML   </p>
+        <p class="css">   CSS   </p>
+        <p class="js">     J   S    </p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+    
 
     <!-- Projects Section -->
     <section id="projects" class="snap-section user-select-none" >
@@ -102,7 +118,7 @@
             </a>
             <a href="https://github.com/asantiap/PA_PBO_KELOMPOK2.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/pharmacy.png">
               <span class="left-text">PHARMACY DATA MANAGEMENT</span>
-              <span class="right-text">java</span>
+              <span class="right-text">java/mysql</span>
             </a>
             <a href="https://github.com/mhnbl/Muhammad-Nabil-46-WEB3.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/mhnblab.png">
               <span class="left-text">MHNBLAB.</span>
@@ -118,7 +134,7 @@
             </a>
             <a href="https://www.figma.com/proto/qgzvr4jGooIfGtEeuD5vIh/Wire-Frame?page-id=0%3A1&node-id=511-2661&viewport=-1130%2C283%2C0.11&t=HHy5MAikOqIcGPgr-1&scaling=contain&content-scaling=fixed&starting-point-node-id=511%3A2661" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/tiketkarya.png">
               <span class="left-text">TIKET KARYA</span>
-              <span class="right-text">UI/UX design</span>
+              <span class="right-text">figma</span>
             </a>
           </div>
         </div>
