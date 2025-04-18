@@ -38,8 +38,8 @@
   </header>
 
   <!-- Cursor and Canvas -->
-  <canvas id="cursorCanvas"></canvas>
-  <div class="custom-cursor"></div>
+  <canvas id="cursorCanvas" class="d-none d-md-block"></canvas>
+  <div class="custom-cursor d-none d-md-block"></div>
 
   <!-- Main Content -->
   <main>
@@ -53,7 +53,7 @@
           <li>ム</li><li>ヒ</li><li>ナ</li><li>ビ</li><li>ル</li>
         </ul>
       </div>
-      <div class="position-absolute bottom-0 end-0">
+      <div class="position-absolute bottom-0 end-0 d-none d-md-block">
         <img src="img/BG1-cut.png" alt="Background" style="width: 800px; height: 300px;" />
       </div>
     </section>
@@ -80,10 +80,10 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skill" class="snap-section user-select-none">
+    <section id="skill" class="snap-section user-select-none" style="height: auto;">
       <div class="skill-container">
-        <h1>SKILLS</h1>
-        <div class="d-flex justify-content-center" style="gap: 60px;">
+        <h1 class="title">SKILLS</h1>
+        <div class="d-flex justify-content-center skilist" style="gap: 60px;">
           <!-- Left Skills -->
           <div class="d-flex flex-column align-items-center">
             <p class="python">PYTHON</p>
@@ -92,7 +92,7 @@
             <p class="figma">FIGMA</p>
           </div>
           <!-- Right Skills -->
-          <div class="d-flex flex-column align-items-center">
+          <div class="d-flex flex-column align-items-center skilist">
             <p class="mysql">MYSQL</p>
             <p class="html">HTML</p>
             <p class="css">CSS</p>
@@ -105,32 +105,32 @@
     <!-- Projects Section -->
     <section id="projects" class="snap-section user-select-none">
       <div class="projects-container">
-        <h1>PROJECTS</h1>
+        <h1 class="title">PROJECTS</h1>
         <div class="projects-grid">
           <div>
             <a href="https://github.com/mhnbl/mhnbl-WEB2.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/portv1.png">
               <span class="left-text">PORTFOLIO VER.1</span>
-              <span class="right-text">html/css/js</span>
+              <span class="right-text d-none d-md-block">html/css/js</span>
             </a>
             <a href="https://github.com/asantiap/PA_PBO_KELOMPOK2.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/pharmacy.png">
               <span class="left-text">PHARMACY DATA MANAGEMENT</span>
-              <span class="right-text">java/mysql</span>
+              <span class="right-text d-none d-md-block">java/mysql</span>
             </a>
             <a href="https://github.com/mhnbl/Muhammad-Nabil-46-WEB3.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/mhnblab.png">
               <span class="left-text">MHNBLAB.</span>
-              <span class="right-text">php/css/js/mysql</span>
+              <span class="right-text d-none d-md-block">php/css/js/mysql</span>
             </a>
             <a href="https://github.com/mhnbl/CAPSTONEDIGIPRODUCT_PDAB_KELOMPOK-7.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/energy.png">
               <span class="left-text">RENEWABLE ENERGY ANALYSIS</span>
-              <span class="right-text">streamlit/python</span>
+              <span class="right-text d-none d-md-block">streamlit/python</span>
             </a>
             <a href="https://github.com/mhnbl/Muhammad-Nabil-46-DATMIN3.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/ign.png">
               <span class="left-text">IGN SCORES ANALYSIS</span>
-              <span class="right-text">streamlit/python</span>
+              <span class="right-text d-none d-md-block">streamlit/python</span>
             </a>
             <a href="https://www.figma.com/proto/qgzvr4jGooIfGtEeuD5vIh/Wire-Frame" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/tiketkarya.png">
               <span class="left-text">TIKET KARYA</span>
-              <span class="right-text">figma</span>
+              <span class="right-text d-none d-md-block">figma</span>
             </a>
           </div>
         </div>
@@ -138,9 +138,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="snap-section py-5 bg-gray mb-6">
+    <section id="contact" class="snap-section py-5 bg-gray mb-6" style="height: auto;">
       <div class="container">
-        <h1 class="outlined-heading mb-5">CONTACT</h1>
+        <h1 class="outlined-heading mb-5 title">CONTACT</h1>
         <div class="row justify-content-start">
           <div class="col-md-7">
             <form class="glass-form">
@@ -162,7 +162,7 @@
               <button type="submit" class="btn btn-outline-dark px-4">Send</button>
             </form>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5 d-none d-md-block">
             <div class="info">
               <div class="info-item">
                 <span class="iconify info-icon" data-icon="mdi:email" style="font-size: 48px;"></span>
@@ -189,23 +189,29 @@
     <!-- Footer -->
     <footer class="custom-footer py-2 section-snap">
       <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col text-start footer-left">
+        <div class="d-flex justify-content-between flex-column flex-md-row align-items-center">
+          
+          <!-- Left Side -->
+          <div class="footer-left text-start mb-2 mb-md-0">
             MHNBL- 2025
           </div>
-          <div class="col text-center footer-center d-flex justify-content-center gap-3 flex-wrap">
-            <a href="mailto:mnbl0521l@gmail.com" class="animated-link email">EMAIL</a>
-            <a href="https://github.com/mhnbl" target="_blank" class="animated-link github">GITHUB</a>
-            <a href="https://www.instagram.com/mhnbl" target="_blank" class="animated-link instagram">INSTAGRAM</a>
-            <a href="https://linkedin.com/in/mhnbl046" target="_blank" class="animated-link linkedin">LINKEDIN</a>
+    
+          <!-- Right Side -->
+          <div class="d-flex flex-column flex-md-row align-items-center text-md-end footer-right gap-2 gap-md-4">
+            <div class="footer-center d-flex justify-content-center gap-3 flex-wrap">
+              <a href="mailto:mnbl0521l@gmail.com" class="animated-link email">EMAIL</a>
+              <a href="https://github.com/mhnbl" target="_blank" class="animated-link github">GITHUB</a>
+              <a href="https://www.instagram.com/mhnbl" target="_blank" class="animated-link instagram">INSTAGRAM</a>
+              <a href="https://linkedin.com/in/mhnbl046" target="_blank" class="animated-link linkedin">LINKEDIN</a>
+            </div>
+            <div class="d-none d-md-block text-end">
+              BY <span class="gray-name">M.NABIL</span>
+            </div>
           </div>
-          <div class="col text-end footer-right">
-            BY <span class="gray-name">M.NABIL</span>
-          </div>
+    
         </div>
       </div>
     </footer>
-  </main>
 
   <!-- JS Scripts -->
   <script src="scripts.js"></script>

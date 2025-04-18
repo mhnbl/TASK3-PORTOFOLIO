@@ -253,8 +253,6 @@ h1.helo {
   width: 600px;
 }
 
-
-
 .char-wrapper {
   display: inline-block;
   height: 1em;
@@ -663,18 +661,24 @@ h1.helo {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-    font-size: 0.95rem;
+    /* font-size: 0.95rem; */
     padding: 1rem 1.2rem;
   }
 
-  .project-item span {
-    width: 100%;
-    text-align: left;
+  h1.title {
+    font-size: 64px;
   }
 
-  .project-item .right-text {
-    display: none;
+  .hero-wrapper {
+    margin-top: 100px; 
   }
+
+
+  .project-item span {
+    width: 100%;
+    text-align: center;
+  }
+
 
   .projects-container a {
     font-size: 32px;
@@ -688,13 +692,25 @@ h1.helo {
     cursor: auto !important;
   }
 
-  .custom-cursor {
-    display: none !important;
+  .letter {
+    color: transparent;
+    line-height: 0.8;
   }
-  #cursorCanvas,
-    .custom-cursor {
-        display: none !important;
-    }
 
+
+  .skill-container p {
+    font-size: 40px;   
+    width: auto; 
+    margin-block: 14px; 
+    line-height: 1;       
+  }
+
+  .char-wrapper span {
+    line-height: 40px; 
+  }
+
+  .custom-footer{
+    font-size: 12px;
+  }
 }
 
