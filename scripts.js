@@ -176,7 +176,7 @@ document.addEventListener("mousemove", (e) => {
     cursor.style.left = `${e.clientX}px`;
 });
 
-const clickableElements = document.querySelectorAll("a, button, .project-item, .char-wrapper");
+const clickableElements = document.querySelectorAll("a, button, .project-item, .char-wrapper, .form-control");
 
 clickableElements.forEach(el => {
     el.addEventListener("mouseenter", () => {
@@ -237,3 +237,12 @@ document.querySelectorAll(".animated-link").forEach(link => {
       link.appendChild(wrapper);
     }
 });
+
+function showMessage(event) {
+    event.preventDefault(); 
+  
+    alert("Message sent!");
+  
+    const form = event.target;
+    form.reset();
+  }
