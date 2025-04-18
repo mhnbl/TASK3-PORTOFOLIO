@@ -241,7 +241,14 @@ document.querySelectorAll(".animated-link").forEach(link => {
 function showMessage(event) {
     event.preventDefault(); 
   
-    alert("Message sent!");
+    const message = document.createElement('div');
+    message.textContent = 'Message sent!';
+    message.className = 'custom-toast';
+    document.body.appendChild(message);
+  
+    setTimeout(() => {
+      message.remove();
+    }, 5000);
   
     const form = event.target;
     form.reset();
@@ -282,14 +289,14 @@ function showMessage(event) {
   particlesJS("particles-js", {
     "particles": {
       "number": {
-        "value": 70,
+        "value": 50,
         "density": {
           "enable": true,
           "value_area": 800
         }
       },
       "color": {
-        "value": "#ff0000" 
+        "value": "#ffffff" 
       },
       "shape": {
         "type": "circle"
@@ -303,7 +310,7 @@ function showMessage(event) {
       "line_linked": {
         "enable": true,
         "distance": 150,
-        "color": "#ff0000",
+        "color": "#ffffff",
         "opacity": 0.3,
         "width": 1
       },

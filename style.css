@@ -47,7 +47,6 @@ html, body {
   align-items: left;
   justify-content: left;
   font-size: 3rem;
-  /* background-color: #000; */
   color: white;
   padding-top: 64px; 
   box-sizing: border-box;
@@ -757,4 +756,23 @@ h1.helo {
   display: none;
 }
 
+.custom-toast {
+  position: fixed;
+  bottom: 60px; 
+  left: 30px;
+  background-color: #333333;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fadeInOut 5s forwards;
+  z-index: 10000;
+}
 
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(20px); }
+  10% { opacity: 1; transform: translateX(0); }
+  90% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(20px); }
+}
