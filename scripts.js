@@ -1,4 +1,3 @@
-// Lenis Smooth Scroll Initialization
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
@@ -16,7 +15,6 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-// Canvas Setup and Mouse Trail
 const canvas = document.getElementById("cursorCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -95,7 +93,6 @@ function animate() {
 
 animate();
 
-// Skill Text Animation
 document.querySelectorAll(".skill-container p").forEach(p => {
     const text = p.textContent;
     p.innerHTML = ""; 
@@ -116,7 +113,6 @@ document.querySelectorAll(".skill-container p").forEach(p => {
     }
 });
 
-// Project Item Preview Image
 document.querySelectorAll('.project-item').forEach(item => {
     item.addEventListener('mouseenter', function () {
         const previewImageSrc = this.getAttribute('data-preview');
@@ -142,7 +138,6 @@ document.querySelectorAll('.project-item').forEach(item => {
     });
 });
 
-// GSAP Animations for Scroll and Fade
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.utils.toArray(".helo .letter").forEach((el, i) => {
@@ -174,7 +169,6 @@ gsap.to("#ab", {
     opacity: 1
 });
 
-// Custom Cursor Interaction
 const cursor = document.querySelector(".custom-cursor");
 
 document.addEventListener("mousemove", (e) => {
@@ -196,14 +190,12 @@ clickableElements.forEach(el => {
     });
 });
 
-// Skill Item Class Assignment
 const skillItems = document.querySelectorAll(".char-wrapper");
 
 skillItems.forEach(item => {
     item.classList.add("skill-item");
 });
 
-// Scroll Trigger Animations for Snap Sections
 gsap.utils.toArray(".snap-section").forEach(section => {
   gsap.fromTo(section,
     {
@@ -226,4 +218,22 @@ gsap.utils.toArray(".snap-section").forEach(section => {
   );
 });
 
-
+document.querySelectorAll(".animated-link").forEach(link => {
+    const text = link.textContent.trim();
+    link.innerHTML = ""; 
+  
+    for (let char of text) {
+      const wrapper = document.createElement("span");
+      wrapper.classList.add("char-wrapper");
+  
+      const top = document.createElement("span");
+      top.textContent = char;
+  
+      const bottom = document.createElement("span");
+      bottom.textContent = char;
+  
+      wrapper.appendChild(top);
+      wrapper.appendChild(bottom);
+      link.appendChild(wrapper);
+    }
+});

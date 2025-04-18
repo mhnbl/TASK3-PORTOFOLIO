@@ -341,7 +341,8 @@ h1.helo {
 	pointer-events: none;
 	z-index: 9999;
   }
-  
+
+
 .projects-container {
   width: 100%;
   padding: 0 0px;
@@ -577,10 +578,16 @@ h1.helo {
   font-size: 24px;
 }
 
-/* Hover effect for links */
+.info-item a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
 .info-item a:hover {
-  color: #007bff;
-  text-decoration: underline;
+  color: gray;
+  transform: scale(1.05);
+  text-decoration: none;
 }
 
 /* Icon styling */
@@ -595,6 +602,59 @@ h1.helo {
   font-size: 24px;
   margin-left: 10px;
   color: #ffffff;
+}
+
+.custom-footer {
+  background-color: white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  padding: 0;
+}
+
+.gray-name {
+  color: rgb(200, 200, 200);
+}
+
+/* Animation part */
+.animated-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+  height: 1em;
+}
+
+.animated-link .char-wrapper {
+  display: inline-block;
+  position: relative;
+  height: 1em;
+  overflow: hidden;
+}
+
+.animated-link .char-wrapper span {
+  display: block;
+  height: 1em;
+  line-height: 1;
+  transition: transform 0.4s ease;
+}
+
+.animated-link .char-wrapper span:nth-child(2) {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: rgb(0, 0, 0);
+}
+
+.animated-link:hover .char-wrapper span {
+  transform: translateY(-100%);
 }
 
 /* Responsive styles */
