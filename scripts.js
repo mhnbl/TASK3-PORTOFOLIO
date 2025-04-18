@@ -246,3 +246,35 @@ function showMessage(event) {
     const form = event.target;
     form.reset();
   }
+
+  const loadingText = document.getElementById("loading-number");
+  const scrambleText = document.getElementById("scramble-text");
+  const targetWord = "MHNBL";
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  
+  let count = 0;
+  const interval = setInterval(() => {
+    loadingText.textContent = count.toString().padStart(2, "0");
+  
+    let display = "";
+    for (let i = 0; i < targetWord.length; i++) {
+      if (count >= (i + 1) * 20) {
+        display += targetWord[i];
+      } else {
+        display += chars[Math.floor(Math.random() * chars.length)];
+      }
+    }
+    scrambleText.textContent = display;
+  
+    count++;
+    if (count > 100) {
+      clearInterval(interval);
+  
+      const loadingScreen = document.getElementById("loading-screen");
+      loadingScreen.style.opacity = 0;  
+  
+      setTimeout(() => {
+        loadingScreen.classList.add("hidden");  
+      }, 1000);
+    }
+  }, 30);
