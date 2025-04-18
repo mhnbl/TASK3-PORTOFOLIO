@@ -342,9 +342,6 @@ h1.helo {
 	z-index: 9999;
   }
   
-
-
-
 .projects-container {
   width: 100%;
   padding: 0 0px;
@@ -467,6 +464,139 @@ h1.helo {
   background-color: rgba(255, 0, 0, 0.7);
 }
 
+
+
+/* Heading style */
+.outlined-heading {
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+/* Transparent gray background for form */
+.glass-form {
+  background-color: rgb(247, 247, 247); /* semi-transparent gray */
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+/* Floating input container */
+.floating-input {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Input and textarea styles */
+.floating-input input,
+.floating-input textarea {
+  background: transparent !important;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4); /* darker gray line */
+  color: #1a1a1a; /* dark text */
+  width: 100%;
+  padding: 10px 0 5px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: none !important;
+}
+
+/* Label floating style */
+.floating-input label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+/* Floating animation on focus or when not empty */
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label,
+.floating-input textarea:focus + label,
+.floating-input textarea:not(:placeholder-shown) + label {
+  top: -12px;
+  font-size: 0.85rem;
+  color: #000;
+}
+
+/* Underline animation (optional) */
+.floating-input .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: black;
+  transition: 0.3s ease;
+}
+
+.floating-input input:focus ~ .underline,
+.floating-input textarea:focus ~ .underline {
+  width: 100%;
+}
+
+/* General form control styling */
+.form-control {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  color: #1a1a1a;
+}
+
+.form-control:focus {
+  background-color: transparent !important;
+  border-color: black;
+  box-shadow: none !important;
+  color: #000;
+}
+
+/* General styles for the info section */
+.info {
+  padding-left: 50px;
+  padding-top:20;
+}
+
+
+/* Info item styling */
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.info-item a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 24px;
+}
+
+/* Hover effect for links */
+.info-item a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Icon styling */
+.info-icon {
+  font-size: 24px; /* Icon size can be adjusted here */
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+/* Optional styling for spacing and alignment */
+.info-item span {
+  font-size: 24px;
+  margin-left: 10px;
+  color: #ffffff;
+}
+
 /* Responsive styles */
 @media (max-width: 576px) {
   .project-item {
@@ -507,3 +637,4 @@ h1.helo {
     }
 
 }
+
