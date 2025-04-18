@@ -26,7 +26,7 @@
     <div class="container d-flex justify-content-between align-items-center h-100 px-2">
       <div class="text-white fs-4 fw-bold"></div>
       <nav class="mx-auto">
-        <ul class="nav justify-content-center">
+        <ul class="nav justify-content-center user-select-none">
           <li class="nav-item"><a class="nav-link fw-bold text-white px-3" href="#ab">ABOUT</a></li>
           <li class="nav-item"><a class="nav-link fw-bold text-white px-3" href="#skill">SKILLS</a></li>
           <li class="nav-item"><a class="nav-link fw-bold text-white px-3" href="#projects">PROJECTS</a></li>
@@ -43,7 +43,7 @@
   <!-- Main Content -->
   <main>
     <!-- Hero Section -->
-    <section id="home" class="snap-section position-relative">
+    <section id="home" class="snap-section position-relative user-select-none">
       <div class="hero-wrapper">
         <ul class="hero brnd-outline">
           <li>M</li><li>H</li><li>N</li><li>B</li><li>L</li>
@@ -58,7 +58,7 @@
     </section>
 
     <!-- Center Hello Section -->
-    <div class="content-wrapper">
+    <div class="content-wrapper user-select-none">
         <img src="img/pfp.png" alt="Image" class="centered-img" id="ab">
         <h1 class="helo">
             <span class="letter">H</span>
@@ -72,7 +72,7 @@
     </div>
 
     <!-- About Section -->
-    <section id="about" class="snap-section" style="background-image: url('img/BG2.png');">
+    <section id="about" class="snap-section user-select-none">
       <div class="text-container">
         <p>My name is Nabil, and I’m an Information Systems student with a passion for front-end development and UI/UX design.</p>
         <p>I enjoy crafting clean, interactive user experiences and bringing digital ideas to life with purpose and style.</p>
@@ -80,7 +80,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skill" class="snap-section" style="background-image: url('img/BG2.png');">
+    <section id="skill" class="snap-section user-select-none">
       <div class="skill-container">
         <h1>SKILLS</h1>
         <p>PYTHON</p>
@@ -91,21 +91,37 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="snap-section" style="background-image: url('img/BG3.png');">
+    <section id="projects" class="snap-section user-select-none" >
       <div class="projects-container">
         <h1>PROJECTS</h1>
-        <p class="project-item" data-preview="img/islamic.png">
-          <span class="left-text">ISLAMIC CENTER WEB</span>
-          <span class="right-text">html</span>
-        </p>
-        <p class="project-item" data-preview="img/APOTEK.png">
-          <span class="left-text">PHARMACY DATA MANAGEMENT</span>
-          <span class="right-text">java</span>
-        </p>
-        <p class="project-item" data-preview="img/TIKETKARYA.png">
-          <span class="left-text">TIKETKARYA</span>
-          <span class="right-text">UI/UX design</span>
-        </p>
+        <div class="projects-grid">
+          <div>
+            <a href="https://github.com/mhnbl/mhnbl-WEB2.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/portv1.png">
+              <span class="left-text">PORTFOLIO VER.1</span>
+              <span class="right-text">html/css/js</span>
+            </a>
+            <a href="https://github.com/asantiap/PA_PBO_KELOMPOK2.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/pharmacy.png">
+              <span class="left-text">PHARMACY DATA MANAGEMENT</span>
+              <span class="right-text">java</span>
+            </a>
+            <a href="https://github.com/mhnbl/Muhammad-Nabil-46-WEB3.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/mhnblab.png">
+              <span class="left-text">MHNBLAB.</span>
+              <span class="right-text">php/css/js/mysql</span>
+            </a>
+            <a href="https://github.com/mhnbl/CAPSTONEDIGIPRODUCT_PDAB_KELOMPOK-7.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/energy.png">
+              <span class="left-text">RENEWABLE ENERGY ANALYSIS</span>
+              <span class="right-text">steamlit/python</span>
+            </a>
+            <a href="https://github.com/mhnbl/Muhammad-Nabil-46-DATMIN3.git" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/ign.png">
+              <span class="left-text">IGN SCORES ANALYSIS</span>
+              <span class="right-text">steamlit/python</span>
+            </a>
+            <a href="https://www.figma.com/proto/qgzvr4jGooIfGtEeuD5vIh/Wire-Frame?page-id=0%3A1&node-id=511-2661&viewport=-1130%2C283%2C0.11&t=HHy5MAikOqIcGPgr-1&scaling=contain&content-scaling=fixed&starting-point-node-id=511%3A2661" target="_blank" rel="noopener noreferrer" class="project-item my-2 text-decoration-none" data-preview="img/projects/tiketkarya.png">
+              <span class="left-text">TIKET KARYA</span>
+              <span class="right-text">UI/UX design</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
